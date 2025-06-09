@@ -40,29 +40,37 @@ private extension StocksLandingPageSwiftUIView {
                 dividerLine()
                 
                 ForEach(viewModel.stocks, id: \.self) { stock in
-                    HStack {
-                        Text(stock.name)
-                            .font(.body)
-                        
-                        var text: String {
-                            if let price = viewModel.prices[stock.stockId] {
-                                return String(format: "%.2f$", price)
-                            } else {
-                                return "n/a"
-                            }
+                    stockRow(for: stock)
+                        .onTapGesture {
+                            viewModel.didTapStock(stock)
                         }
-                        
-                        Spacer()
-                        
-                        Text(text)
-                            .font(.body)
-                            .padding(.trailing, 16)
-                        
-                    }
                     
                     dividerLine()
                 }
             }
+        }
+    }
+    
+    @ViewBuilder
+    func stockRow(for stock: Stock) -> some View {
+        HStack {
+            Text(stock.name)
+                .font(.body)
+            
+            var text: String {
+                if let price = viewModel.prices[stock.stockId] {
+                    return String(format: "%.2f$", price)
+                } else {
+                    return "n/a"
+                }
+            }
+            
+            Spacer()
+            
+            Text(text)
+                .font(.body)
+                .padding(.trailing, 16)
+            
         }
     }
     

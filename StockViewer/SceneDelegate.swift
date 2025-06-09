@@ -8,17 +8,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: windowScene)
-        self.window = window
-        
         //MARK: SwiftUI based approach:
-        let rootSwiftUIView = StocksLandingPageSwiftUIView(viewModel: StocksLandingPageSwiftUIViewModel(
-            stocks: Stock.demoStocks,
-            stockService: StockPriceUpdateService()
-        ))
-        let hostingController = UIHostingController(rootView: rootSwiftUIView)
+        let rootView = RootCoordinatorView()
         
-        window.rootViewController = hostingController
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = UIHostingController(rootView: rootView)
+        self.window = window
         
         //MARK: UIKit based approach
 //        let vc = StockListViewController(viewModel: StockListViewModel())
