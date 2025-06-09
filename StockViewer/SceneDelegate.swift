@@ -1,3 +1,4 @@
+import SwiftUI
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -10,16 +11,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         self.window = window
         
-//        let vc = StockListViewController(viewModel: StockListViewModel())
-        let vcV2 = StocksLandingPageVC(
-            viewModel: StocksLandingPageViewModel(
-                stocks: Stock.demoStocks,
-                stockService: StockPriceUpdateService()
-            )
-        )
+        //MARK: SwiftUI based approach:
+        let rootSwiftUIView = StocksLandingPageSwiftUIView(viewModel: StocksLandingPageSwiftUIViewModel(
+            stocks: Stock.demoStocks,
+            stockService: StockPriceUpdateService()
+        ))
+        let hostingController = UIHostingController(rootView: rootSwiftUIView)
         
-        window.rootViewController = UINavigationController(rootViewController: vcV2)
+        window.rootViewController = hostingController
+        
+        //MARK: UIKit based approach
+//        let vc = StockListViewController(viewModel: StockListViewModel())
+//        let vcV2 = StocksLandingPageVC(
+//            viewModel: StocksLandingPageViewModel(
+//                stocks: Stock.demoStocks,
+//                stockService: StockPriceUpdateService()
+//            )
+//        )
+        
+//        window.rootViewController = UINavigationController(rootViewController: vcV2)
         window.makeKeyAndVisible()
     }
-
 }

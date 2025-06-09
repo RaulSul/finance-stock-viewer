@@ -11,6 +11,8 @@
 		C4CC8F0A2DF722BC00AD8C64 /* StocksLandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC8F092DF722BC00AD8C64 /* StocksLandingPageVC.swift */; };
 		C4CC8F0C2DF7359400AD8C64 /* StocksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC8F0B2DF7359400AD8C64 /* StocksCollectionCell.swift */; };
 		C4CC8F0E2DF7363D00AD8C64 /* StocksLandingPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC8F0D2DF7363D00AD8C64 /* StocksLandingPageViewModel.swift */; };
+		C4CC8F142DF74F5700AD8C64 /* StocksLandingPageSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC8F132DF74F5700AD8C64 /* StocksLandingPageSwiftUIView.swift */; };
+		C4CC8F172DF751EA00AD8C64 /* StocksLandingPageSwiftUIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC8F162DF751EA00AD8C64 /* StocksLandingPageSwiftUIViewModel.swift */; };
 		CA4E60A22B46E793002CFD13 /* StockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4E60A12B46E793002CFD13 /* StockListViewModel.swift */; };
 		CA4E60A42B46FCD1002CFD13 /* StockPriceUpdateServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4E60A32B46FCD1002CFD13 /* StockPriceUpdateServiceTests.swift */; };
 		F9C2DB2827B11ADB00C09B75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2DB2727B11ADB00C09B75 /* AppDelegate.swift */; };
@@ -48,6 +50,8 @@
 		C4CC8F092DF722BC00AD8C64 /* StocksLandingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksLandingPageVC.swift; sourceTree = "<group>"; };
 		C4CC8F0B2DF7359400AD8C64 /* StocksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksCollectionCell.swift; sourceTree = "<group>"; };
 		C4CC8F0D2DF7363D00AD8C64 /* StocksLandingPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksLandingPageViewModel.swift; sourceTree = "<group>"; };
+		C4CC8F132DF74F5700AD8C64 /* StocksLandingPageSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksLandingPageSwiftUIView.swift; sourceTree = "<group>"; };
+		C4CC8F162DF751EA00AD8C64 /* StocksLandingPageSwiftUIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksLandingPageSwiftUIViewModel.swift; sourceTree = "<group>"; };
 		CA4E60A12B46E793002CFD13 /* StockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewModel.swift; sourceTree = "<group>"; };
 		CA4E60A32B46FCD1002CFD13 /* StockPriceUpdateServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPriceUpdateServiceTests.swift; sourceTree = "<group>"; };
 		F9C2DB2427B11ADB00C09B75 /* StockViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,7 +101,7 @@
 		C4CC8F082DF722AB00AD8C64 /* V2 */ = {
 			isa = PBXGroup;
 			children = (
-				C4CC8F0D2DF7363D00AD8C64 /* StocksLandingPageViewModel.swift */,
+				C4CC8F152DF74F9700AD8C64 /* SwiftUIBased */,
 				C4CC8F102DF74E4800AD8C64 /* KitBased */,
 			);
 			path = V2;
@@ -106,11 +110,21 @@
 		C4CC8F102DF74E4800AD8C64 /* KitBased */ = {
 			isa = PBXGroup;
 			children = (
+				C4CC8F0D2DF7363D00AD8C64 /* StocksLandingPageViewModel.swift */,
 				C4CC8F0B2DF7359400AD8C64 /* StocksCollectionCell.swift */,
 				C4CC8F092DF722BC00AD8C64 /* StocksLandingPageVC.swift */,
 				C4CC8F062DF71C9C00AD8C64 /* StocksLandingPageView.swift */,
 			);
 			path = KitBased;
+			sourceTree = "<group>";
+		};
+		C4CC8F152DF74F9700AD8C64 /* SwiftUIBased */ = {
+			isa = PBXGroup;
+			children = (
+				C4CC8F132DF74F5700AD8C64 /* StocksLandingPageSwiftUIView.swift */,
+				C4CC8F162DF751EA00AD8C64 /* StocksLandingPageSwiftUIViewModel.swift */,
+			);
+			path = SwiftUIBased;
 			sourceTree = "<group>";
 		};
 		F9C2DB1B27B11ADB00C09B75 = {
@@ -316,9 +330,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4CC8F172DF751EA00AD8C64 /* StocksLandingPageSwiftUIViewModel.swift in Sources */,
 				C4CC8F0E2DF7363D00AD8C64 /* StocksLandingPageViewModel.swift in Sources */,
 				C4CC8F072DF71C9C00AD8C64 /* StocksLandingPageView.swift in Sources */,
 				F9F6545D27B1492500900681 /* StockPriceUpdate.swift in Sources */,
+				C4CC8F142DF74F5700AD8C64 /* StocksLandingPageSwiftUIView.swift in Sources */,
 				F9C2DB2C27B11ADB00C09B75 /* StockListViewController.swift in Sources */,
 				F9C2DB2827B11ADB00C09B75 /* AppDelegate.swift in Sources */,
 				C4CC8F0A2DF722BC00AD8C64 /* StocksLandingPageVC.swift in Sources */,
