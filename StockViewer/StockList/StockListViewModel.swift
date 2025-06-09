@@ -5,7 +5,6 @@ class StockListViewModel {
     var stocks: [Stock] = []
     var prices: [String: Double] = [:]  // Changed to a dictionary after all
     
-    
     private let stockPriceService: StockPriceUpdateService
 
     init(

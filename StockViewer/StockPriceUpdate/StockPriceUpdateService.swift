@@ -29,7 +29,7 @@ class StockPriceUpdateService {
         timers[stockId] = timer
     }
 
-    func unsubscribe(stockId: String) {
+    private func unsubscribe(stockId: String) {
         timers[stockId]?.invalidate()
         timers[stockId] = nil
     }
